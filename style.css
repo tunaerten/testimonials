@@ -1,0 +1,255 @@
+/* RESETS */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* GENERAL */
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+:root {
+  --moderate-violet: hsl(263, 55%, 52%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+body {
+  font-family: "Barlow Semi Condensed";
+  background-color: #dee4ea;
+  font-size: 13px;
+  margin: 5em;
+}
+
+.grid-container {
+  display: grid;
+  gap: 1.4rem;
+}
+.grids {
+  border-radius: 10px;
+}
+
+.container {
+  margin: 2.4615em;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  margin-bottom: 1.3em;
+}
+
+.grid1 {
+  background-color: var(--moderate-violet);
+}
+
+.grid1 .person::after {
+  content: url(./images/bg-pattern-quotation.svg);
+  position: absolute;
+  top: -1.7em;
+  right: 0;
+}
+
+.grid1 .text {
+  max-width: 93%;
+}
+
+.grid2 {
+  background-color: var(--very-dark-grayish-blue);
+}
+
+.grid2 .container {
+  max-width: 79%;
+}
+
+.grid2 .heading {
+  margin-bottom: 0.7em;
+}
+
+.grid2 .text {
+  color: var(--white);
+  opacity: 70%;
+}
+
+.grid3 {
+  background-color: var(--white);
+}
+
+.grid3 .person__name,
+.grid3 .person__title {
+  color: var(--very-dark-blackish-blue);
+}
+
+.grid3 .heading {
+  color: var(--very-dark-grayish-blue);
+  margin-bottom: 0.7em;
+}
+
+.grid3 .text {
+  color: var(--very-dark-grayish-blue);
+  opacity: 70%;
+  max-width: 95%;
+}
+
+.grid4 {
+  background-color: var(--very-dark-blackish-blue);
+}
+
+.grid4 .heading {
+  margin-bottom: 0.7em;
+  max-width: 95%;
+}
+
+.grid4 .text {
+  max-width: 98%;
+}
+.grid5 {
+  background-color: var(--white);
+}
+.grid5 .person__name,
+.grid5 .person__title {
+  color: var(--very-dark-blackish-blue);
+}
+
+.grid5 .heading {
+  color: var(--very-dark-grayish-blue);
+  margin-bottom: 0.7em;
+}
+
+.grid5 .text {
+  color: var(--very-dark-grayish-blue);
+  opacity: 70%;
+  max-width: 98%;
+}
+
+.person__photo {
+  border-radius: 50%;
+  width: 2.1rem;
+  height: 2.1rem;
+}
+
+.border {
+  border: 2px solid #9f77e9;
+}
+.person__info {
+  z-index: 2;
+}
+
+.person__name {
+  color: var(--white);
+}
+.person__title {
+  color: var(--white);
+  opacity: 50%;
+  font-size: 11px;
+}
+
+.heading {
+  color: var(--white);
+  position: relative;
+  z-index: 3;
+  font-weight: 500;
+  margin-bottom: 2em;
+}
+
+.text {
+  color: var(--light-gray);
+  opacity: 70%;
+  line-height: 1.4;
+}
+
+.attribution {
+  margin: 3em auto 0 auto;
+  max-width: 60%;
+  text-align: center;
+}
+
+@media (min-width: 60em) {
+  .container {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8em;
+    margin: 1.8em 2.4em;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .person {
+    max-width: 81%;
+  }
+
+  .grid1 {
+    grid-column: 1 / span 2;
+  }
+
+  .grids .text,
+  .grids .heading,
+  .grids .person {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .grid1 .person::after {
+    right: -0.5em;
+    top: -1.8em;
+  }
+
+  .grid4 {
+    grid-column: 2 / span 2;
+  }
+
+  .grid3 .heading {
+    max-width: 95%;
+  }
+
+  .grid5 {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+  }
+
+  .grid5 .heading {
+    margin-bottom: 0.6em;
+  }
+}
